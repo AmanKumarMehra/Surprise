@@ -1,0 +1,221 @@
+.moon-dance-regular {
+  font-family: "Moon Dance", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #fdbf00;
+}
+.card {
+  width: 80%; /* Adjusted for mobile view */
+  height: auto; /* Adjusted for mobile view */
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+  transition: 1s;
+  align-items: center;
+  display: flex;
+}
+.card:hover {
+  transform: rotate(-5deg);
+}
+.card:hover .outside {
+  transform: rotateY(-130deg);
+}
+.outside,
+.inside {
+  height: 70%;
+  width: 70%; /* Adjusted for mobile view */
+  position: absolute;
+  left: 0; /* Adjusted for mobile view */
+}
+.inside {
+  background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+  line-height: 1.5; /* Adjusted for mobile view */
+  padding: 10px; /* Adjusted for mobile view */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.outside {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transform-origin: left;
+  transition: 2s;
+  cursor: pointer;
+}
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+.front {
+  background-color: #ffffff;
+}
+.back {
+  transform: rotateY(180deg);
+  background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+}
+.cake {
+  width: 80%; /* Adjusted for mobile view */
+  position: absolute;
+  bottom: 30px;
+}
+.top-layer,
+.middle-layer,
+.bottom-layer {
+  height: 60px; /* Adjusted for mobile view */
+  width: 180px; /* Adjusted for mobile view */
+  background-repeat: repeat;
+  background-size: 45px 75px; /* Adjusted for mobile view */
+  background-position: 21px 0; /* Adjusted for mobile view */
+  background-image: linear-gradient(
+      transparent 37.5px,
+      #fedbab 37.5px,
+      #fedbab 45px,
+      transparent 45px
+    ),
+    radial-gradient(circle at 22.5px 3.75px, #994c10 22.5px, #fcbf29 23.25px); /* Adjusted for mobile view */
+  border-radius: 7.5px 7.5px 0 0; /* Adjusted for mobile view */
+  position: relative;
+  margin: auto;
+}
+.middle-layer {
+  transform: scale(0.85);
+  top: 4.5px; /* Adjusted for mobile view */
+}
+.top-layer {
+  transform: scale(0.7);
+  top: 19.5px; /* Adjusted for mobile view */
+}
+.candle {
+  height: 33.75px; /* Adjusted for mobile view */
+  width: 11.25px; /* Adjusted for mobile view */
+  background: repeating-linear-gradient(
+    45deg,
+    #fd3018 0,
+    #fd3018 3.75px, /* Adjusted for mobile view */
+    #ffa89e 3.75px,
+    #ffa89e 7.5px /* Adjusted for mobile view */
+  );
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 151.5px; /* Adjusted for mobile view */
+}
+.candle:before {
+  content: "";
+  position: absolute;
+  height: 12px; /* Adjusted for mobile view */
+  width: 12px; /* Adjusted for mobile view */
+  background-color: #ffa500;
+  border-radius: 0 50% 50% 50%;
+  bottom: 36px; /* Adjusted for mobile view */
+  transform: rotate(45deg);
+  left: -0.75px; /* Adjusted for mobile view */
+}
+.outside p {
+  font-size: 18px; /* Adjusted for mobile view */
+  text-transform: uppercase;
+  margin-top: 15px; /* Adjusted for mobile view */
+  text-align: center;
+  letter-spacing: 4.5px; /* Adjusted for mobile view */
+  color: #000046;
+}
+.inside h1 {
+  font-size: 90px; /* Adjusted for mobile view */
+  line-height: 90px; /* Adjusted for mobile view */
+}
+
+/* Media query for screens smaller than 768px (e.g., tablets and mobile phones) */
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 90%;
+    height: auto;
+  }
+  .outside,
+  .inside {
+    width: 100%;
+    left: 0;
+  }
+  .inside {
+    line-height: 1.5;
+    padding: 10px;
+  }
+  .cake {
+    width: 80%;
+  }
+  .top-layer,
+  .middle-layer,
+  .bottom-layer {
+    height: 60px;
+    width: 180px;
+    background-size: 45px 75px;
+    background-position: 21px 0;
+    background-image: linear-gradient(
+        transparent 37.5px,
+        #fedbab 37.5px,
+        #fedbab 45px,
+        transparent 45px
+      ),
+      radial-gradient(circle at 22.5px 3.75px, #994c10 22.5px, #fcbf29 23.25px);
+    border-radius: 7.5px 7.5px 0 0;
+    margin: auto;
+  }
+  .middle-layer {
+    transform: scale(0.85);
+    top: 4.5px;
+  }
+  .top-layer {
+    transform: scale(0.7);
+    top: 19.5px;
+  }
+  .candle {
+    height: 33.75px;
+    width: 11.25px;
+    background: repeating-linear-gradient(
+      45deg,
+      #fd3018 0,
+      #fd3018 3.75px,
+      #ffa89e 3.75px,
+      #ffa89e 7.5px
+    );
+    bottom: 151.5px;
+  }
+  .candle:before {
+    height: 12px;
+    width: 12px;
+    bottom: 36px;
+    left: -0.75px;
+  }
+  .outside p {
+    font-size: 18px;
+    margin-top: 15px;
+    letter-spacing: 4.5px;
+  }
+  .inside h1 {
+    font-size: 90px;
+    line-height: 90px;
+  }
+}
